@@ -4,13 +4,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
-    @Override
-    public void onEnable() {
-        getLogger().info("NethpotVerify เปิดใช้งานแล้ว!");
-    }
+    private VerifyManager verifyManager;
 
     @Override
-    public void onDisable() {
-        getLogger().info("NethpotVerify ปิดใช้งานแล้ว!");
+    public void onEnable() {
+
+        verifyManager = new VerifyManager(this);
+
+        getCommand("verify").setExecutor(new VerifyCommand(this));
+
+        getLogger().info("Verify Plugin Enabled");
     }
+
+    public VerifyManager getVerifyManager() {
+        return verifyManager;
+    }
+
 }
