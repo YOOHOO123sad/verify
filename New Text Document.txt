@@ -1,0 +1,12 @@
+minecraft-plugin/
+├── pom.xml
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/
+        │       └── nethpot/
+        │           └── verify/
+        │               └── VerifyPlugin.java
+        └── resources/
+            ├── plugin.yml
+            └── config.yml
